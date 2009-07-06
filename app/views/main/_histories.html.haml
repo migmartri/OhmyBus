@@ -1,0 +1,13 @@
+.title-little Últimos cambios
+%hr/
+- for history in @histories
+  .history
+    .span-2.text-center= image_tag history.user.avatar.url(:thumb)
+    .span-19.last
+      = history.user.login
+      = history.type 
+      = link_to history.stop.id
+      ,
+      = truncate(history.stop.name, 40)
+    
+    .clear

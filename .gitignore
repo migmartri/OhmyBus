@@ -1,0 +1,28 @@
+*.swp
+#Ignorando archivos temporales
+tmp/*
+#Configuraciones
+config/database.yml
+config/deploy.rb
+db/schema.rb
+
+#Bases de datos
+db/*.sqlite3
+
+#Ignorando log
+log/*.log
+
+
+#Ignorando proyecto netbeans	
+nbproject/*
+.loadpath
+.project
+
+.DS_Store
+
+#Bundle-fu
+public/stylesheets/cache
+public/javascripts/cache
+public/avatars/*
+#Merb
+lib/merb/log/*

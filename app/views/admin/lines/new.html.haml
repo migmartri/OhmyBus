@@ -1,0 +1,11 @@
+.span-23.form
+  .box.new-line
+    - form_for @line, :url => admin_lines_path, :html => {:onsubmit => "encodePolyline()"} do |f|
+      = render :partial => 'form', :locals => {:f => f}
+      .span-24.mar-5
+        = f.submit "Guardar"
+        »
+        = link_to "Volver", admin_lines_path
+    .clear
+%script
+  window.onload = initMapNewLine();

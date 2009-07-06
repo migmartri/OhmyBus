@@ -1,0 +1,43 @@
+!!!
+%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %script{:src => "http://maps.google.com/maps?file=api&amp;v=2&amp;key=#{GMAPS_KEY}", :type => "text/javascript"}
+    - bundle do
+      = javascript_include_tag 'prototype', "map", "polyline_lib", "polyline", "effects", "urm2lat", "facebox"
+      = stylesheet_link_tag "estilo", "blueprint/compressed", "flash", "facebox"
+       
+    %title
+      OhMyBus!
+  %body
+    #container
+      #content.span-29
+        .span-22.main
+          .title 
+            = link_to "OhMyBus!", root_path, :title => 'Ir al home'
+        .span-6.last
+          - unless logged_in?
+            = link_to "Sign-in", '/login', :rel => 'facebox'
+            = link_to "Sign-up", '/signup', :rel => 'facebox'
+          - else
+            = link_to "Salir", '/logout'
+
+        .span-22
+          = content_tag 'div', flash[:notice], :class => 'flash_notice', :id => "flash_notice", :style => "display:none;"
+          = content_tag 'div', flash[:error], :class => 'flash_error', :id => "flash_error", :style => "display:none;"
+
+        = yield
+        - unless yield(:legend).blank?
+          #side-column.span-6.last
+            .negrita.text-center.text-14 Información:
+            %hr/
+            %p= yield :legend
+      .clear
+    #footer
+      = link_to "¿Quienes somos?", page_path("quienes-somos")
+      = "-"
+      = link_to "Wiki", "http://github.com/N3uro5i5/ohmybus/wikis", :target => "_blank", :alt => 'wiki'
+      = "-"
+      = link_to "Código", "http://github.com/N3uro5i5/ohmybus", :target => "_blank", :alt => 'Codigo'
+      %br/
+      De los chicos de
+      = link_to "Flowers In Space", "http://www.flowersinspace.com"

@@ -1,0 +1,20 @@
+#index_lines.span-27
+  .box
+    .title Alertas
+    .span-25.border-gris-1.pad-5.grisbg
+      .span-4.negrita.text-center Hora Inicio
+      .span-3.negrita.text-center Móvil
+      .span-2.negrita.text-center Offset
+      .span-9.negrita.text-center Parada
+      .span-2.negrita.text-center Línea
+      .span-4.negrita.last.text-right Opciones
+    = render :partial => 'alert', :collection => @alerts
+    .clear
+    .mar-5= will_paginate @alerts, :prev_label => "Anterior", :next_label => "Siguiente"
+    
+    #side-column
+      .negrita.text-14 Información:
+      %hr/
+      %p 
+        Aquí se muestran las alertas de sms dadas de alta en el sistema.
+        El color rojo significa que la alerta no ha sido enviada aún, el color verde todo lo contrario.

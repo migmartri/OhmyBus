@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  stop_id: 1
+  lat: 9.99
+  lng: 9.99
+  name: MyString
+  user_id: 1
+
+two:
+  stop_id: 1
+  lat: 9.99
+  lng: 9.99
+  name: MyString
+  user_id: 1

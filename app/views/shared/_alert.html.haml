@@ -1,0 +1,42 @@
+- [:notice, :error].each do |tipo|
+  = content_tag "div", flash[tipo], :class => "flash #{tipo == :notice ? "success" : tipo}" if flash[tipo]
+
+- if line && !flash[:notice]
+  .title-medium
+    = "Alerta para la línea <u>#{line}</u>"
+  
+  - @alert ||= Alert.new
+  - form_remote_for :alert, :url => alerts_path do |f|
+    .field
+      = f.radio_button 'in_time', "no", :onclick => "$('minutes').style.display = 'none'", :checked => true
+      = f.label 'in_time_no', "¡ Avísame siempre... !"
+      %br/
+      = f.radio_button 'in_time', "yes",  :onclick => "$('minutes').style.display = 'block'"
+      = f.label 'in_time_yes', "Solo cuando falte..."
+    
+      #minutes{:style => "display:#{@alert.in_time == "yes" ? 'block' : 'none'};"}
+        = f.text_field :offset, :size => 2
+        minuto/s        
+      
+    .field
+      = f.label "start_at", "a las..."
+      %br/
+      = f.time_select :start_at
+      = error_message_on :alert, :start_at
+    .field
+      = f.label "movil", "Móvil"
+      %br/
+      = f.text_field :movil, :size => 8
+      = error_message_on :alert, :movil   
+      = hidden_field(:alert, :line_label, :value => line)
+      = hidden_field(:alert, :stop_id, :value => stop)
+    %p
+      = submit_tag "Enviar"
+      
+- else
+  .title-little= "¿Que es OhMyBus!?"  
+  .info
+    %p
+      OhMyBus! es un proyecto libre que te permite saber en todo momento la posición sobre el mapa de los autobuses urbanos de la ciudad de Sevilla, así como el tiempo estimado de llegada a las paradas de éstos.
+    %p
+      También se ofrece un servicio de crear alertas que avisen al usuario vía sms de la cercanía del autobús para así no perder ni un solo minuto en la parada :-)

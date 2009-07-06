@@ -1,0 +1,15 @@
+#index_lines.span-23
+  .box
+    .title Líneas:
+    .span-21.border-gris-1.pad-5.grisbg
+      .span-2.negrita.text-center Label
+      .span-7.negrita Nombre
+      .span-6.negrita Recorrido
+      .span-6.negrita.last.text-right Opciones
+    = render :partial => 'line', :collection => @lines
+    .span-22.pad-5.text-center= link_to "Nueva Línea", new_admin_line_path
+    .clear
+- content_for :legend do
+  Lo que estás viendo son las líneas creadas en la aplicación. 
+  %br
+  Desde aquí puedes editarlas, eliminarlas o crear nuevas.

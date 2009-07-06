@@ -1,0 +1,16 @@
+#stops.span-23
+  .box
+    .title Lista de Paradas:
+    .clear
+    #map    
+
+- content_for :legend do
+  Desde aquí puedes administrar todas las paradas del sistema, desde crearlas, borrarlas o editarlas.
+  Para crear nuevas paradas solo debes hacer click en algún lugar del mapa e introducir los datos apropiados, puedes asignarle alguna línea de las existentes, si aún no existe puedes 
+  = link_to "crear nuevas lineas.", new_admin_line_path
+  %br/
+  Editar paradas existentes es tan sencillo como hacer click sobre él y cambiar los datos del buble.
+
+
+%script
+  window.onload = initMapIndexStop();

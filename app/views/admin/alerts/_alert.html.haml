@@ -1,0 +1,10 @@
+%div{:class => "span-25 blancobg border-gris-1 pad-5", :style => "#{alert.send_at.nil? ? 'background-color:#ECDADA' : 'background-color:#E0F1DC'}"}
+  .span-4.text-center= alert.start_at.to_s(:short)
+  .span-3.text-center= alert.movil
+  .span-2.text-center= alert.offset
+  .span-9
+    = "#{alert.stop.node} - "
+    = truncate(alert.stop.name, 35).capitalize
+  .span-2.text-center= alert.line_label
+  .span-4.last.text-right
+    = link_to 'Eliminar', admin_alert_path(alert), :confirm => 'Seguro que quieres eliminarla?', :method => 'delete'

@@ -1,0 +1,14 @@
+.clear
+.title-medium Login:
+.span-10
+  - form_tag session_path do
+    .span-4= label_tag 'Usuario:' 
+    .span-6.last= text_field_tag 'login', @login
+    .span-4= label_tag 'Contraseña:'
+    .span-6.last= password_field_tag 'password', nil
+
+    .span-4
+      = label_tag 'remember_me', 'Recordarme:'
+      = check_box_tag 'remember_me', '1', @remember_me
+    .span-6.last= submit_tag 'Login'
+.clear

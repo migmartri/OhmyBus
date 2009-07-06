@@ -1,0 +1,12 @@
+--- 
+:backgroundrb: 
+  :port: 11006
+  :ip: 0.0.0.0
+  :environment: production
+:schedules:
+  :alerts_worker:
+    :send_all_sms:
+      :trigger_args:
+        :start: <%= Time.now + 5.seconds %>
+        :end: <%= Time.now + 1.year %>
+        :repeat_interval: <%= 1.minute %>

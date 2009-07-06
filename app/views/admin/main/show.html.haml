@@ -1,0 +1,12 @@
+#index_lines.span-23
+  .box
+    .title Administración:
+    .span-21
+      .title= link_to "Lineas", admin_lines_path
+      .title= link_to  "Paradas", admin_stops_path
+      .title= link_to "Alertas", admin_alerts_path
+    .clear
+- content_for :legend do
+  Te encuentras en la zona de administración, desde aquí puedes acceder a las paradas, lineas y alertas dadas de alta en el sistema,
+  así como crear nuevas, editar existentes, etc
+

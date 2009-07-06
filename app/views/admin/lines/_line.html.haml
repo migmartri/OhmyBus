@@ -1,0 +1,8 @@
+.span-21.blancobg.border-gris-1.pad-5
+  %div{:class => "span-2 text-center", :style => "background-color: #{line.color}"}= line.label
+  .span-7= truncate(line.name, 25)
+  .span-6= truncate(line.course, 25)
+  .span-6.last.text-right
+    = link_to 'Editar', edit_admin_line_path(line)
+    » 
+    = link_to "Eliminar", admin_line_path(line), :method => :delete, :confirm => 'Estas seguro?' 

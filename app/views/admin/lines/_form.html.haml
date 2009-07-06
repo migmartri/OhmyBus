@@ -1,0 +1,16 @@
+.span-24
+  .span-5
+    .title Linea:
+  .span-3
+    = f.label :label, "Nº:"
+    = f.text_field :label, :size => 2
+  .span-7
+    = f.label :name, "Nombre:"
+    = f.text_field :name, :size => 10
+  .span-5
+    = f.label :color, "Color:"
+    = f.text_field :color, :size => 6, :value => @line.color || '#0000FF'
+.clear
+.span-19
+#map
+= f.hidden_field :course

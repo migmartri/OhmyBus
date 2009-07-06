@@ -1,0 +1,36 @@
+/*Flash*/
+.flash_ok,
+.flash_error,
+.flash_notice{
+  padding: 5px;
+  margin: 5px auto;
+  width: 70%;
+  text-align:center;
+  font-weight:bold;
+}
+.flash_notice {
+  color: #060;
+  border: 1px solid #060;
+  background: #E0F1DC;
+}
+.flash_error {
+  color: #600;
+  border: 1px solid #600;
+  background: #ECDADA;
+}
+
+/*Error formulario*/
+.form-holder .error, .form-holder .formError{
+    max-width: 229px;
+    margin: auto 27px auto auto;
+    font-size: 11px;
+    color: red;
+    border:none;
+}
+.LV_valid_field{
+  border:2px solid #00CC00;
+}
+
+.LV_invalid_field {
+  border:2px solid #CC0000;
+}

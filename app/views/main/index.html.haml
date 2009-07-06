@@ -1,0 +1,10 @@
+.span-22
+  #map
+.span-6.last
+  #alert    
+    = render :partial => 'shared/alert', :locals => {:line => params[:line_id], :stop => params[:stop_id]}
+#history.span-22
+  = render :partial => 'histories'
+
+%script
+  window.onload  = initMainMap();

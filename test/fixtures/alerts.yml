@@ -1,0 +1,12 @@
+--- 
+alerts_001: 
+  updated_at: 2008-09-15 17:10:33
+  movil: "645921536"
+  line_label: "34"
+  stop_id: "996332908"
+  send_at: "2008-09-15"
+  start_at: 2008-09-15 17:08:00
+  id: "16"
+  periodicall: 
+  offset: "3"
+  created_at: 2008-09-15 17:07:20
